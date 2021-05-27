@@ -1,0 +1,37 @@
+server:
+  port: 9527
+
+spring:
+  application:
+    name: springcloud-zuul #-gateway
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://eureka7001.com:7001/eureka/,http://eureka7002.com:7002/eureka/
+  instance:
+    instance-id: zuul9527.com    #定义显示的ip地址
+    prefer-ip-address: true       #隐藏localhost地址
+
+info:
+  app.name: lsl-springcloud
+  company.name: procompany
+
+zuul:
+  routes:
+    springcloud-provider-dept.serviceId: springcloud-provider-dept
+    springcloud-provider-dept.path: /mydept/**
+  ignored-services: springcloud-provider-dept  //  "*" 可以隐藏全部的服务
+  prefix: /kuang
+
+
+    #zuul:
+    #routes:
+    # mydept:serverId: springcloud-provider-dept  #原来的服务ip
+    #mydept.path: /mydept/**                     #现在的服务ip
+
+    #zuul:
+    # routes:
+    # user-service:
+    #  path: /springcloud-provider-dept/**
+  # url: http://127.0.0.1:8001
