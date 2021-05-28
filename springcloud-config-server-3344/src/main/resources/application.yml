@@ -11,6 +11,10 @@ spring:
         git:
           uri: https://github.com/1287756283/springcloud-config.git
           default-label: main
+          username: 1287756283 #git仓库帐号
+          password: w117502. #git仓库密码
+          skip-ssl-validation: true
+          timeout: 10
 
 
 
