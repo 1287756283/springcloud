@@ -1,0 +1,11 @@
+#系统级别的配置
+
+
+spring:
+  cloud:
+    config:
+      name: config-client  #获取girhub的资源名称，无需后缀
+      uri: http://localhost:3344
+      profile: test
+      label: main
+
